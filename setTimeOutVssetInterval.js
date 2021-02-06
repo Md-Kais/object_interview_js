@@ -19,3 +19,4 @@ setInterval(()=>{
 },1333);
 //setInterval works like setTimeout() but the major difference is setInterval execute many time after the provided time. it has no breaking rule to stop it.it executes over and over again after the provided time. 
 //setInterval times needed: exactly provided time . heres, 2333 ms.it doesnot need to execute all shits first. setInterval always maintain provided time
+//To stop this press ctrl + c in console for checks(setInterval)
