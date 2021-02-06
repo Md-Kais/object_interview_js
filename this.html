@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+
+<body>
+    <h1>This is not confused anymore.</h1>
+    <p onclick="this.innerText = 'You clicked me.' ">Click me and see magic</p>
+    <!-- ekhane this keyword je element er modhye rakha hoise, sei element ta ke denote korbe. -->
+    <script>
+        const myObject = {
+            name: 'Kuddus Ali',
+            getFullName: function () {
+                console.log(this);
+                // this myObject er jonno kaj korbe. 
+                // kintu amra jodi ei method ta onno object er jonno declare kori, tahole this oi method er hoye kaj korbe. 
+                return 'Mr. ' + this.name;
+            }
+        }
+        // console.log(myObject.getFullName);
+        myObject.getFullName();
+        const anotherObject = {
+            name: 'Bidyut Ali',
+        }
+        anotherObject.getFullName = myObject.getFullName;
+        // console.log(anotherObject.getFullName);
+        anotherObject.getFullName();
+
+        function add(a, b) {
+            console.log(this);
+            return a + b;
+        }
+        add(5, 7);
+        // ekhane add method or function er bam pashe kono object dot(.) diye jukto nai, tai this er value ta hobe window. 
+
+        anotherObject.sum = add;
+        // add function ta ke anotherObject er sum method hisebe declare korlam. 
+
+        anotherObject.sum();
+        // ekhane sum() function er bame dot(.) diye anotherObject ase. 
+        // tai seta this hisebe jabe add function er vitor. 
+
+        setTimeout(function () {
+            console.log(this);
+        }, 5000);
+        alert('I will come after 5 seconds delay');
+//The keyword  you use to refer to an object through which they were invoked is this
+
+    </script>
+</body>
+
+</html>
